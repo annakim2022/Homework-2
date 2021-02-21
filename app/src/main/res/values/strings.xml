@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Homework 2</string>
+    <string name="button_getStarted">get started</string>
+    <string name="button_showResults">show results</string>
+    <string name="textView_brewed">Brewed</string>
+    <string name="textView_to">to</string>
+    <string name="textView_highPoint">High-Point Beer?</string>
+    <string name="hint_monthYear">mm/yyyy</string>
+    <string name="hint_searchBeer">Search by beer name...</string>
+    <string name="toast_message">please input valid dates in correct format</string>
+    <string name="textView_abvLabel">ABV: </string>
+    <string name="textView_firstBrewedLabel">First brewed: </string>
+    <string name="searchView_beer">filter by name...</string>
+    
+</resources>
