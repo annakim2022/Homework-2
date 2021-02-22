@@ -84,28 +84,30 @@ public class SecondActivity extends AppCompatActivity {
             api_url = api_url + "&brewed_before=" + to;
         }
         if (!TextUtils.isEmpty(brewed) && !TextUtils.isEmpty(to)) {
-            try {
-                // check dates
-                String year1 = brewed.substring(3);
-                String year2 = to.substring(3);
-                int brewedYear = Integer.parseInt(year1);
-                int toYear = Integer.parseInt(year2);
-                String month1 = brewed.substring(0,2);
-                String month2 = to.substring(0,2);
-                int brewedMonth = Integer.parseInt(month1);
-                int toMonth = Integer.parseInt(month2);
-                if (brewedYear > toYear) {
+            if (brewed.charAt(2) == '/' && to.charAt(2) == '/' && brewed.length() == 7 && to.length() == 7) {
+                try {
+                    // check dates
+                    String year1 = brewed.substring(3);
+                    String year2 = to.substring(3);
+                    int brewedYear = Integer.parseInt(year1);
+                    int toYear = Integer.parseInt(year2);
+                    String month1 = brewed.substring(0, 2);
+                    String month2 = to.substring(0, 2);
+                    int brewedMonth = Integer.parseInt(month1);
+                    int toMonth = Integer.parseInt(month2);
+                    if (brewedYear > toYear) {
+                        toast++;
+                    } else if (brewedYear == toYear) {
+                        if (brewedMonth > toMonth) {
+                            toast++;
+                        }
+                    }
+                } catch (Exception e) {
                     toast++;
                 }
-                else if (brewedYear == toYear){
-                    if (brewedMonth > toMonth) {
-                        toast++;
-                    }
-                }
             }
-            catch (Exception e){
+            else {
                 toast++;
-                toast();
             }
         }
 
